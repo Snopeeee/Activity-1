@@ -1,23 +1,31 @@
 <?php include 'header.php'; ?>
 
-<div>
+<div class="container add-student-container">
+    <h1>Add Student</h1>
     <form action="addStudentProcess.php" method="POST">
-        <label for="fname">First Name</label>
-        <input type="text" name="first_name" placeholder="Enter your first name">
+        <div class="input-group">
+            <label for="fname">First Name</label>
+            <input type="text" name="first_name" id="fname" placeholder="Enter your first name" required>
+        </div>
 
-        <label for="lname">Last Name</label>
-        <input type="text" name="last_name" placeholder="Enter your last name">
+        <div class="input-group">
+            <label for="lname">Last Name</label>
+            <input type="text" name="last_name" id="lname" placeholder="Enter your last name" required>
+        </div>
 
-        <label for="email">Email</label>
-        Email Name: <input type="text" name="email" placeholder="Enter your email">
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        </div>
 
-        <label for="contact"> Contact</label>
-        <input type="text" name="contact" placeholder="Enter your contact">
+        <div class="input-group">
+            <label for="contact">Contact</label>
+            <input type="text" name="contact" id="contact" placeholder="Enter your contact" required>
+        </div>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" class="button">
     </form>
 </div>
 
 </body>
-
 </html>

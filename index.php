@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
+<div class="container">
+    <h1>Employee Information</h1>
+    <?php include 'Employee.php'; ?>
+    
     <?php
-
-    include 'Employee.php';
-    // Creating an object (instance) of the Employee class
     $employee1 = new Employee();
     $employee1->firstName = "John";
     $employee1->lastName = "Doe";
     $employee1->salary = 50000;
 
-    // Calling methods to access and display information
-    echo "Employee Name: " . $employee1->getFullName() . "<br>";
-    echo "Salary: $" . $employee1->getSalary();
-
+    echo "<div class='employee-info'>";
+    echo "<p><strong>Employee Name:</strong> " . $employee1->getFullName() . "</p>";
+    echo "<p><strong>Salary:</strong> $" . number_format($employee1->getSalary(), 2) . "</p>";
+    echo "</div>";
     ?>
-
+</div>
 
 </body>
-
 </html>

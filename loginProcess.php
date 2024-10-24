@@ -1,16 +1,19 @@
 <?php
+session_start();
+include 'dbConnect.php';
 
-// if (isset($_POST['username'])) {
-//     $username = $_POST['username'];
-//     echo "Hello, $username!";
-// }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Always set the session to logged in
+    $_SESSION['loggedin'] = true; 
 
-
-
-
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    echo "Hello, $username!";
+    // Redirect to index.php with a JavaScript alert
+    echo "<script>
+            alert('Successfully logged in!');
+            window.location.href = 'index.php';
+          </script>";
+    exit(); // Ensure no further code is executed after redirection
 }
+
+// Close the database connection
+$mysqli->close();
+?>
